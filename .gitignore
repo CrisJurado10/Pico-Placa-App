@@ -1,0 +1,14 @@
+# Dependendences, with a big size, is recommended to the efficiency not have them up
+node_modules/
+
+# Productioon Build
+dist/
+
+# Logs File
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System Files
+.DS_Store
+Thumbs.db
