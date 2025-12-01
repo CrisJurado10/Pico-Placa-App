@@ -8,18 +8,22 @@ A robust, TDD-driven application to predict "Pico y Placa" driving restrictions 
 - **Holiday Support**: Automatically detects Ecuadorian National Holidays (exempting restrictions).
 - **Validation**: strict input validation for license plate formats (e.g., `PBC-1234`).
 - **Reliability**: **100% Test Coverage** across unit and integration levels.
+- **Dockerized**: Ready for deployment with a multi-stage Dockerfile.
 
 ## Technologies
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Server**: [Express.js](https://expressjs.com/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/) (via CDN)
 - **Testing**: [Jest](https://jestjs.io/) & [Supertest](https://github.com/ladjs/supertest)
+- **Linting/Formatting**: [ESLint](https://eslint.org/) & [Prettier](https://prettier.io/)
+- **Containerization**: [Docker](https://www.docker.com/)
 
 ## Getting Started
 
 ### Prerequisites
 - [Node.js](https://nodejs.org/) (v14 or higher)
 - npm
+- [Docker](https://www.docker.com/) (Optional, for containerized execution)
 
 ### Installation
 
@@ -52,6 +56,32 @@ npm test
 To generate a coverage report:
 npm run test:coverage
 ```
+
+### Linting & Formatting
+
+Maintain code quality and consistency with the configured tools:
+
+- **Check for linting errors:**
+  npm run lint
+  ```
+
+- **Format code automatically:**
+  npm run format
+  ```
+
+## Docker Support
+
+Build and run the application in a containerized environment using the optimized multi-stage Dockerfile:
+
+1. **Build the image:**
+   docker build -t pico-placa-app .
+   ```
+
+2. **Run the container:**
+   docker run -p 3000:3000 pico-placa-app
+   ```
+
+Access the app at `http://localhost:3000`.
 
 ## Architecture
 The project is structured to separate concerns strictly:
