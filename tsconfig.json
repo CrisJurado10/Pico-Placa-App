@@ -1,44 +1,30 @@
 {
-  // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
-    // File Layout
-    // "rootDir": "./src",
+    /* --- Estructura de Archivos --- */
+    "rootDir": "./",
     "outDir": "./dist",
 
-    // Environment Settings
-    // See also https://aka.ms/tsconfig/module
-    "module": "nodenext",
-    "target": "esnext",
-    "types": [],
-    // For nodejs:
-    // "lib": ["esnext"],
-    // "types": ["node"],
-    // and npm install -D @types/node
+    /* --- Configuración de Módulos (Crucial para Jest) --- */
+    "module": "commonjs",     
+    "target": "es2016",
+    "esModuleInterop": true,
+    
+    /* --- LA SOLUCIÓN A TU ERROR --- */
+    /* Aquí cargamos explícitamente los tipos de Node y Jest */
+    "types": ["node", "jest"],
 
-    // Other Outputs
-    "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
-
-    // Stricter Typechecking Options
+    /* --- Chequeos Estrictos (Clean Code) --- */
+    "strict": true,
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
-
-    // Style Options
-    // "noImplicitReturns": true,
-    // "noImplicitOverride": true,
-    // "noUnusedLocals": true,
-    // "noUnusedParameters": true,
-    // "noFallthroughCasesInSwitch": true,
-    // "noPropertyAccessFromIndexSignature": true,
-
-    // Recommended Options
-    "strict": true,
-    "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
-    "isolatedModules": true,
-    "noUncheckedSideEffectImports": true,
-    "moduleDetection": "force",
+    "forceConsistentCasingInFileNames": true,
+    
+    /* --- Otros --- */
     "skipLibCheck": true,
-  }
+    "sourceMap": true,
+    "declaration": true
+  },
+  /* --- Qué archivos debe leer TypeScript --- */
+  "include": ["src/**/*", "tests/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
