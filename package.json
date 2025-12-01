@@ -6,6 +6,8 @@
   "scripts": {
     "test": "jest --verbose",
     "test:coverage": "jest --coverage",
+    "lint": "eslint src/**/*.{ts,js}",
+    "format": "prettier --write src/**/*.{ts,js}",
     "build": "tsc",
     "start": "ts-node src/server.ts"
   },
@@ -17,7 +19,13 @@
     "@types/jest": "^29.5.12",
     "@types/node": "^20.11.24",
     "@types/supertest": "^6.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.48.0",
+    "@typescript-eslint/parser": "^8.48.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
     "jest": "^29.7.0",
+    "prettier": "^3.7.3",
     "supertest": "^7.1.4",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",

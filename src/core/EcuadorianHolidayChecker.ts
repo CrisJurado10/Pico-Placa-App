@@ -14,7 +14,7 @@ export class EcuadorianHolidayChecker implements HolidayChecker {
 
   isHoliday(date: string): boolean {
     // date format YYYY-MM-DD
-    const [year, month, day] = date.split('-');
+    const [, month, day] = date.split('-');
     const monthDay = `${month}-${day}`;
     return this.fixedHolidays.includes(monthDay);
   }
