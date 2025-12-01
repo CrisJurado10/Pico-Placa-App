@@ -1,5 +1,17 @@
+import { HolidayChecker } from './interfaces/HolidayChecker';
+
 export class PicoPlacaEvaluator {
+  private holidayChecker: HolidayChecker;
+
+  constructor(holidayChecker: HolidayChecker) {
+    this.holidayChecker = holidayChecker;
+  }
+
   canDrive(plate: string, date: string, time: string): boolean {
+    if (this.holidayChecker.isHoliday(date)) {
+        return true;
+    }
+
     const lastDigit = parseInt(plate.slice(-1), 10);
     
     // Ensure date is treated as local date or specific day effectively.
